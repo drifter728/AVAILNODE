@@ -1,5 +1,7 @@
 # INSTALL AVAIL FULL NODE
 ## INSTALL AVAIL NODE
+
+***
 **THE FIRST STEP IS TO BUY A  VPS**
 ```
 Minimum	/ Recommended
