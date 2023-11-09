@@ -1,4 +1,4 @@
-# EditREADME
+# INSTALL AVAIL FULL NODE
 ## INSTALL AVAIL NODE
 THE FIRST STEP IS TO A VPS
 Minimum	/ Recommended
@@ -8,7 +8,7 @@ Storage (SSD):20-40 GB/ 200-300 GB.
 I would suggest go with recommended specifications for smooth installation.
 Make sure you have UBUNTU 22.0 selected for buying vps,as other versions have some issues.
 
-1] INSTALLING RUST 
+**1] INSTALLING RUST** 
 Copy paste this code one by one in ur terminal.
 sudo apt-get update
 sudo apt install build-essential
@@ -20,7 +20,7 @@ rustup update
 rustup update nightly
 rustup target add wasm32-unknown-unknown --toolchain nightly
 
-NOW,run the Avail Node using the following command:(V 1.8.0.01)/GOLDBERG
+**NOW,run the Avail Node using the following command:(V 1.8.0.01)/GOLDBERG**
 git clone https://github.com/availproject/avail.git
 cd avail
 mkdir -p output
@@ -28,7 +28,7 @@ mkdir -p data
 git checkout v1.8.0.0
 cargo run --locked --release -- --chain goldberg -d ./output
 
-This will compile and run node connected to goldberg network(wait for about 45 mins for the process to complete)
+**This will compile and run node connected to goldberg network(wait for about 45 mins for the process to complete)**
 2023-10-11 16:11:31 Avail Node    
 2023-10-11 16:11:31 ✌️  version 1.7.0-ad024ff050e    
 2023-10-11 16:11:31 ❤️  by rerrts, 2017-2023    
@@ -46,11 +46,11 @@ This will compile and run node connected to goldberg network(wait for about 45 m
 2023-10-11 16:11:33 💻 Target environment: gnu    
 2023-10-11 16:11:33 💻 CPU: 13th Gen Intel(R) Core(TM) i7-13700K
 
-Now,create systemd:
+**Now,create systemd**
 touch /etc/systemd/system/availd.service
 nano /etc/systemd/system/availd.service
 
-Make sure you change your validator name
+**Make sure you change your validator name**
 [Unit] 
 Description=Avail Validator
 After=network.target
@@ -62,7 +62,8 @@ Restart=always
 RestartSec=120
 [Install] 
 WantedBy=multi-user.target
-Save it by inputting ctrl+X
+
+**Save it by inputting ctrl+X**
 systemctl enable availd.service
 systemctl start availd.service
 systemctl status availd.service
