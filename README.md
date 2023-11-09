@@ -5,12 +5,12 @@
 **THE FIRST STEP IS TO BUY A  VPS**
 ```
 Minimum	/ Recommended
-RAM: 4GB	/ 8GB
-CPU (amd64/x86 architecture):2 core/	4 core
-Storage (SSD):20-40 GB/ 200-300 GB.
+RAM: 4GB/8GB
+CPU (amd64/x86 architecture):2 core/4 core
+Storage (SSD):20-40 GB/200-300 GB.
 I would suggest go with recommended specifications for smooth installation.
 Make sure you have UBUNTU 22.0 selected for buying vps,as other versions have some issues.
-
+```
 **1] INSTALLING RUST**
 ```
 ``` 
@@ -33,7 +33,7 @@ mkdir -p output
 mkdir -p data
 git checkout v1.8.0.0
 cargo run --locked --release -- --chain goldberg -d ./output
-
+```
 **This will compile and run node connected to goldberg network(wait for about 45 mins for the process to complete)**
 ```
 2023-10-11 16:11:31 Avail Node    
@@ -52,12 +52,12 @@ cargo run --locked --release -- --chain goldberg -d ./output
 2023-10-11 16:11:33 💻 CPU architecture: x86_64    
 2023-10-11 16:11:33 💻 Target environment: gnu    
 2023-10-11 16:11:33 💻 CPU: 13th Gen Intel(R) Core(TM) i7-13700K
-
+```
 **Now,create systemd**
 ```
 touch /etc/systemd/system/availd.service
 nano /etc/systemd/system/availd.service
-
+```
 **Make sure you change your validator name**
 ```
 [Unit] 
@@ -71,6 +71,7 @@ Restart=always
 RestartSec=120
 [Install] 
 WantedBy=multi-user.target
+```
 
 **Save it by inputting ctrl+X**
 ```
@@ -79,7 +80,7 @@ systemctl start availd.service
 systemctl status availd.service
 Tail the logs with:journalctl -f -u availd
 Check your node on https://telemetry.avail.tools/
-............................................................thankyou
+..........................................................
 
 
 
