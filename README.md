@@ -10,6 +10,7 @@ I would suggest go with recommended specifications for smooth installation.
 Make sure you have UBUNTU 22.0 selected for buying vps,as other versions have some issues.
 
 **1] INSTALLING RUST**
+```
 ``` 
 Copy paste this code one by one in ur terminal.
 sudo apt-get update
